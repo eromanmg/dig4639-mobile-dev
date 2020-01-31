@@ -1,4 +1,4 @@
-var adder = require("./Adder.js");
+var Adder = require("./Adder.js");
 var input = {
     a:10,
     b:5,
