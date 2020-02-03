@@ -26,7 +26,7 @@ function onClick() {
         console.log(span.innerHTML);
     }
     input.addEventListener("change", onChange);
-    newTask.innerHTML = `<input type='checkbox'></input><span>${taskInput.value}</span>`;
+//      newTask.innerHTML = `<input type='checkbox'></input><span>${taskInput.value}</span>`;
     
     element.appendChild(newTask);
 }
