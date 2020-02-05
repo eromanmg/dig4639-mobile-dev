@@ -12,7 +12,7 @@ class Task {
         let span = document.createElement("span");
         this.element.appendChild(span);
         span.innerHTML = this.props.content;
-        this.element.className
+        this.element.className = "task";
     }
     onClick(e){
         console.log(this);
