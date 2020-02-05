@@ -1,3 +1,9 @@
+# Team Memebers
+
+eromanmg
+JadaJoseph43
+katiemarshall
+
 # Understanding the Component Model in React
 Working in a team of 2-3, start with the code in ice/w5a in the class repository.
 
