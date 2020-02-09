@@ -11,6 +11,9 @@ class Card{
         span.innerHTML = this.props.content;
         this.element.className = "card";
     }
+    render() {
+        return this.element;
+    }
 }
 
 export default Card;
