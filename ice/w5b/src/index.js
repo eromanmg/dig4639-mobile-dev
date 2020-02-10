@@ -11,8 +11,8 @@ function runOnLoad()
     // Handle adding a new task
     var addTaskButton = document.getElementById("addTask");
     addTaskButton.addEventListener("click", onClick)
-    
 }
+
 function onClick() {
     console.log("clicked!");
     var newTask = new Task({content:input.value,done:false});
