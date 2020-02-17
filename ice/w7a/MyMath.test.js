@@ -1,8 +1,17 @@
-import { Sum } from './sum.js'
+import { Sum } from './MyMath.js'
+describe('Testing AddList', () => {
+  it('Returns the sum of a list of numbers', () =>
+  {
+    let list = [1,2,3,4];
+    let result = AddList(list);
+    expect(result).toBe(10);
+  })
+})
 
 test('adds 1 + 2 to equal 3', () => {
   expect(Sum(1, 2)).toBe(3)
 })
+
 
 // ICE 
 
