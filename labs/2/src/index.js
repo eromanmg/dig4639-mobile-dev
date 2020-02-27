@@ -1,5 +1,5 @@
 import Card from "./components/Card/index.js"
-let Card;
+
 function runOnLoad()
 {
     // Create a container for us
