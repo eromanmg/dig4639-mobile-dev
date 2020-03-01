@@ -4,10 +4,7 @@ import './App.css';
 import Card from'./components/card/index.js';
 
 class App extends React.Component {
-  myArray = [{v:"MyString",t:"Title"},{v:"Another String"},{v:"String 5"}]
-  myFunction() {
-    console.log("Hi there");
-  }
+  
   render () {
     return (
       <>
