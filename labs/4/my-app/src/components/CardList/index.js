@@ -1,9 +1,13 @@
 import React from 'react';
-import './data.json';
+import List from './data.json';
 import './index.css';
+import Card from '../card'
 
-class Card extends React.Component{
-    myArray = [{v:"Enjoys the beach.", t:"Max"}, {v:"Loves to run.", t:"Maggie", v:"Sniffs butts.", t:"Buddy"}]
+class CardList extends React.Component{
+   constructor(props){
+       super(props)
+       this.state = List
+   }
     myFunction() {
         
     }
@@ -11,7 +15,7 @@ class Card extends React.Component{
         return (
             <>
             {
-                this.myArray.map((value) => <p>{value.v}</p> <h3>{value.t}</h3>)
+                this.state.List.map((value) => )
             }
             
 

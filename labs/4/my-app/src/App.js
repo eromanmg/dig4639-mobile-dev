@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <>
  
-      <Card content="This is a card!" myFunction={() => this.myFunction()}></Card>
+      <CardList content="This is a card!" myFunction={() => this.myFunction()}></CardList>
       </>
     );
   }
