@@ -10,6 +10,7 @@ class CardList extends React.Component{
    }
     myFunction() {
         
+        
     }
     render (){
         return (
