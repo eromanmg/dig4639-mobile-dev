@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Card from'./components/card/index.js';
+// import Card from'./components/card';
+import CardList from './components/CardList'
 
 class App extends React.Component {
   

@@ -12,8 +12,15 @@ class Card extends React.Component{
         // span.innerHTML = this.props.content;
         // this.element.className = "card";
     }
+
     render() {
-        return <p className="card">{this.props.content}</p>;
+        // Add a button that closes the card with the className "close"
+        // That button should call a function on CardList to remove the card using filter
+        
+        return <div className="card">
+            <h3>{this.props.title}</h3>
+            <p>{this.props.content}</p>
+        </div>;
     }
 }
 

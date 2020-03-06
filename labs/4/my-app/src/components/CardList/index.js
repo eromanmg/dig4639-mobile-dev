@@ -1,6 +1,5 @@
 import React from 'react';
 import List from './data.json';
-import './index.css';
 import Card from '../card'
 
 class CardList extends React.Component{
@@ -8,20 +7,17 @@ class CardList extends React.Component{
        super(props)
        this.state = List
    }
-    myFunction() {
-        
-        
+    myFunction(content) {
+        // This method should modify the list stored in this.state using this.setState with the new list.
     }
     render (){
         return (
             <>
             {
-                this.state.List.map((value) => )
+                this.state.cards.map((value) => <Card content={value.content} title={value.title}></Card>)
+    
             }
-            
-
             </>
-
         )
     }
 }
@@ -30,4 +26,4 @@ class CardList extends React.Component{
 
 
 
-export default card;
+export default CardList;
