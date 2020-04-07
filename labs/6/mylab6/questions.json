@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Who is the main character in Breaking Bad?",
+        "possibleAnswers":
+        [
+            {"text":"Woodrow Wilson",
+            "correct":false},
+            {"text":"Willy Wonka",
+            "correct":false},
+            {"text":"Walter White",
+            "correct":true}
+        ]
+    },
+    {
+        "question": "Who is Walter's right hand man?",
+        "possibleAnswers":
+        [
+            {"text":"Jesse Pinkman",
+            "correct":true},
+            {"text":"Saul Goodman",
+            "correct":false},
+            {"text":"Walter JR",
+            "correct":false}
+        ]
+    },
+    {
+        "question": "What is Saul Goodman's profession? ",
+        "possibleAnswers":
+        [
+            {"text":"Chemistry teacher",
+            "correct":false},
+            {"text":"Lawyer",
+            "correct":true},
+            {"text":"Gun for hire",
+            "correct":false}
+        ]
+    },
+    {
+        "question": "What is Marie's favorite color? ",
+        "possibleAnswers":
+        [
+            {"text":"Blue",
+            "correct":false},
+            {"text":"Pink",
+            "correct":false},
+            {"text":"Purple",
+            "correct":true}
+        ]
+    },
+    {
+        "question": "What is the name of Gustavo's fast food franchise? ",
+        "possibleAnswers":
+        [
+            {"text":"Los pollos locos",
+            "correct":false},
+            {"text":"Los hermanos locos",
+            "correct":false},
+            {"text":"Pollos hermanos",
+            "correct":true}
+        ]
+    }
+]
