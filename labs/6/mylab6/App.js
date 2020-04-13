@@ -79,11 +79,16 @@ class TitlePage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'yellow',
     alignItems: 'center',
     justifyContent: 'center',
     
   },
+
+  title: {
+    fontFamily: 'Calibri',
+    fontSize: '90px',
+  }
 
 });
 
