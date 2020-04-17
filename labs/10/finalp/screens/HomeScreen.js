@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { MonoText } from '../components/StyledText';
 
+
 const HEADERS = {
     "method": "GET",
     "headers": {
