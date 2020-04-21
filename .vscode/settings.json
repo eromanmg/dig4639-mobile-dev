@@ -1,0 +1,9 @@
+{
+  "eslint.enable": true,
+  "eslint.workingDirectories": [
+    "project"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+}
+}

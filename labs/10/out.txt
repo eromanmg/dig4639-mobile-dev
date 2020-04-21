@@ -1,0 +1,5 @@
+total 8
+drwxr-xr-x 1 Edeqr 197609 0 Apr 17 11:17 .
+drwxr-xr-x 1 Edeqr 197609 0 Apr 17 11:16 ..
+drwxr-xr-x 1 Edeqr 197609 0 Apr 17 11:09 finalp
+-rw-r--r-- 1 Edeqr 197609 0 Apr 17 11:17 out.txt
