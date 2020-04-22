@@ -27,6 +27,27 @@ export default class HomeScreen extends React.Component {
        .then(body => this.setState({ contacts: body.contacts }))
    }
 
+   removeContact (position) {
+     fetch('http://plato.mrl.ai:8080/contacts/remove', {
+       method: 'POST',
+       headers: {
+         api: 'roman',
+         'Content-Type': 'application/json',
+         Accept: 'application/json'
+       },
+       body: JSON.stringify({ position: position })
+     })
+       .then(response => response.json())
+       .then(body => {
+         console.log(body)
+         if (body.removed != undefined) {
+           const currentList = this.state.contacts.filter((v, i) =>
+             (i !== position))
+           this.setState({ contacts: currentList })
+         }
+       })
+   }
+
    render () {
      return (
        <View style={styles.container}>
@@ -37,11 +58,10 @@ export default class HomeScreen extends React.Component {
            accessibilityLabel="Calls the remote API for contacts"
          />
          { this.state.contacts.map((contact, i) => <Card key={i} title={contact.name} />)
-
          }<Button
-         title="Add new contact"
-         onPress={() => this.props.navigation.navigate('Add')}/>
-</View>
+           title="Add new contact"
+           onPress={() => this.props.navigation.navigate('Add')}/>
+       </View>
 
      )
    }

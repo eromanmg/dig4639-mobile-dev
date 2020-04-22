@@ -10,7 +10,8 @@ export default class LinksScreen extends React.Component {
     this.state = {
       submitDisabled: true,
       addName: '',
-      addNumber: ''
+      addNumber: '',
+      contactPriority: 0
     }
   }
 
@@ -54,21 +55,27 @@ export default class LinksScreen extends React.Component {
       },
       body: JSON.stringify(
         {
-          text: this.state.addName.addNumber
+          text: this.state.addName.addNumber,
+          priority: this.state.contactPriority
         }
       )
     })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(body => {
         console.log(body)
         if (body.added !== undefined) {
           console.log('Successfully added task!')
+          // eslint-disable-next-line react/prop-types
           this.props.navigation.navigate('contacts',
-            { contacts: { text: this.state.addName.addNumber } })
+            { contacts: { name: this.state.addName.addNumber, priority: this.state.contactPriority } })
         } else {
           console.log('Error adding contact')
         }
       })
+  }
+
+  handlePriorityInput () {
+
   }
 
   render () {
@@ -76,6 +83,8 @@ export default class LinksScreen extends React.Component {
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Input placeholder="Enter new contact"
           onChangeName={name => this.handleNameInput(name)} />
+        <Input placeholder="Enter number"
+          onChangeNumber={number => this.handleNumberInput(number)} />
         <Button title="Create a new contact"
           disabled={this.state.submitDisabled}
           onPress={() => this.handleAddContact()}/>
