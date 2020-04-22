@@ -1,15 +1,87 @@
-import { Ionicons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
-import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons'
+import * as React from 'react'
+import { Input, Button } from 'react-native-elements'
+import { StyleSheet, Text, View } from 'react-native'
+import { RectButton, ScrollView } from 'react-native-gesture-handler'
 
-export default function LinksScreen() {
-  return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      
-    </ScrollView>
-  );
+export default class LinksScreen extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      submitDisabled: true,
+      addName: '',
+      addNumber: ''
+    }
+  }
+
+  handleNameInput (name) {
+    if (name.lenght > 0) {
+      this.setState(
+        {
+          submitDisabled: false,
+          addName: name
+        }
+      )
+    } else {
+      this.setState({ submitDisabled: true })
+      console.log(name)
+    }
+  }
+
+  handleNumberInput (number) {
+    if (number.lenght > 0) {
+      this.setState(
+        {
+          submitDisabled: false,
+          addNumber: number
+        }
+      )
+    } else {
+      this.setState({ submitDisabled: true })
+      console.log(number)
+    }
+  }
+
+  handleAddContact () {
+    console.log('Added!')
+    console.log(this.state.addName, this.state.addNumber)
+    fetch('http://plato.mrl.ai:8080/contacts/add', {
+      method: 'POST',
+      headers: {
+        API: 'roman',
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(
+        {
+          text: this.state.addName.addNumber
+        }
+      )
+    })
+      .then(res => res.json())
+      .then(body => {
+        console.log(body)
+        if (body.added !== undefined) {
+          console.log('Successfully added task!')
+          this.props.navigation.navigate('contacts',
+            { contacts: { text: this.state.addName.addNumber } })
+        } else {
+          console.log('Error adding contact')
+        }
+      })
+  }
+
+  render () {
+    return (
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <Input placeholder="Enter new contact"
+          onChangeName={name => this.handleNameInput(name)} />
+        <Button title="Create a new contact"
+          disabled={this.state.submitDisabled}
+          onPress={() => this.handleAddContact()}/>
+      </ScrollView>
+    )
+  }
 }
 
 function OptionButton({ icon, label, onPress, isLastOption }) {

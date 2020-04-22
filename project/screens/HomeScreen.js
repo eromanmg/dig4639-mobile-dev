@@ -2,46 +2,6 @@ import * as WebBrowser from 'expo-web-browser'
 import * as React from 'react'
 import { Button, Platform, StyleSheet, Text, View, ActivityIndicator } from 'react-native'
 import { Card } from 'react-native-elements'
-import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
-
-/*const HEADERS = {
-  method: 'GET',
-  headers: {
-    api: 'roman',
-    'Content-Type': 'application/json',
-    Accept: 'application/json'
-  }
-}
-
-export default function HomeScreen () {
-  const [contacts, setContacts] = React.useState([])
-  const { promiseInProgress } = usePromiseTracker()
-  const callApi = React.useCallback(() => {
-    fetch('http://plato.mrl.ai:8080', HEADERS)
-      .then(response => response.json())
-      .then(body => console.log(body))
-  }, [])
-  React.useEffect(() => {
-    console.log('Effect has run')
-    trackPromise(fetch('http://plato.mrl.ai:8080/contacts', HEADERS)
-      .then(response => response.json())
-      .then(body => setContacts(body.contacts)))
-  }, [])
-  return (
-    <View style={styles.container}>
-      <Button
-        onPress={callApi}
-        title="Call the API"
-        color="#841584"
-        accessibilityLabel="Calls the remote API for contacts"
-      />
-      { (promiseInProgress)
-        ? <ActivityIndicator size="large" color="#000ff"/>
-        : contacts.map((contact, i) => <Card key={i} title={contact.name}/>)
-      }
-    </View>
-  )
-}*/
 
 const HEADERS = {
   method: 'GET',
@@ -62,9 +22,9 @@ export default class HomeScreen extends React.Component {
 
    componentDidMount () {
      console.log('Effect has run')
-     trackPromise(fetch('http://plato.mrl.ai:8080/contacts', HEADERS)
+     fetch('http://plato.mrl.ai:8080/contacts', HEADERS)
        .then(response => response.json())
-       .then(body => this.setState({ contacts: body.contacts })))
+       .then(body => this.setState({ contacts: body.contacts }))
    }
 
    render () {
@@ -78,7 +38,10 @@ export default class HomeScreen extends React.Component {
          />
          { this.state.contacts.map((contact, i) => <Card key={i} title={contact.name} />)
 
-         }</View>
+         }<Button
+         title="Add new contact"
+         onPress={() => this.props.navigation.navigate('Add')}/>
+</View>
 
      )
    }
