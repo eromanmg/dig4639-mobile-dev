@@ -4,7 +4,7 @@ import { Button, Platform, StyleSheet, Text, View, ActivityIndicator } from 'rea
 import { Card } from 'react-native-elements'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 
-const HEADERS = {
+/*const HEADERS = {
   method: 'GET',
   headers: {
     api: 'roman',
@@ -41,10 +41,8 @@ export default function HomeScreen () {
       }
     </View>
   )
-}
+}*/
 
-
-/*const { promiseInProgress } = usePromiseTracker();
 const HEADERS = {
   method: 'GET',
   headers: {
@@ -78,18 +76,13 @@ export default class HomeScreen extends React.Component {
            color="#841584"
            accessibilityLabel="Calls the remote API for contacts"
          />
-         { (promiseInProgress) ?
-         <ActivityIndicator size="large" color="#000f" />
-         :this.state.contacts.map((contact, i) => <Card key={i} title={contact.name} />)
-           
-         }
-         
-       </View>
+         { this.state.contacts.map((contact, i) => <Card key={i} title={contact.name} />)
+
+         }</View>
 
      )
    }
 }
-*/
 
 HomeScreen.navigationOptions = {
   header: null
